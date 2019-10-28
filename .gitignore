@@ -1,0 +1,10 @@
+
+# Created by https://www.gitignore.io/api/maven,eclipse,intellij
+# Edit at https://www.gitignore.io/?templates=maven,eclipse,intellij
+
+### Eclipse ###
+.DS_Store
+cypress/screenshots/
+cypress/videos/
+node_modules/
+/node_modules
