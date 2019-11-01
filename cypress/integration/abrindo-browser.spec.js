@@ -1,12 +1,15 @@
 describe ("Tickets", () => {
     beforeEach (() => cy.visit ("https://bit.ly/2XSuwCW"));
         
-    it("Preenchendo todos os campos de digitação", () =>{
-        cy.get ("#first-name").type ("Carlos");
-        cy.get ("#last-name").type ("Guillen");
+    it.only("Preenchendo todos os campos de digitação", () =>{
+        const a = "Carlos";
+        const b = "Guillen";
+        const Fullname = `${a} ${b}`;
+        cy.get ("#first-name").type (a);
+        cy.get ("#last-name").type (b);
         cy.get ("#email").type ("cpenha@ciandt.com");
         cy.get ("#requests").type ("Vegetariano");
-        cy.get ("#signature").type ("Carlos Penha Guillen");
+        cy.get ("#signature").type (Fullname);
     });
 
     it("Selecione a opção 2", () => {
@@ -36,7 +39,7 @@ describe ("Tickets", () => {
         cy.get ("#email.invalid").should ("exist");
      });
 
-     it.only("Validar email invalido e depois adicionar um email valido", () => {
+     it("Validar email invalido e depois adicionar um email valido", () => {
         cy.get ("#email").type ("carlos-teste.com");
         cy.get ("#email.invalid").should ("exist");
         cy.get ("#email").clear().type ("carlos@teste.com");
