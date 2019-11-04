@@ -1,7 +1,7 @@
 describe ("Tickets", () => {
     beforeEach (() => cy.visit ("https://bit.ly/2XSuwCW"));
         
-    it.only("Preencher todo o formulário e depois resetar", () =>{
+    it("Preencher todo o formulário e depois resetar", () =>{
         const a = "Carlos";
         const b = "Guillen";
         const fullname = `${a} ${b}`;     
